@@ -1,7 +1,13 @@
 import Sequelize from 'sequelize';
 import databaseConfig from '../config/database';
 
-const models = [];
+import Region from '../models/Region';
+import State from '../models/State';
+import Year from '../models/Year';
+import Resource from '../models/Resource';
+import CommitmentTerm from '../models/CommitmentTerm';
+
+const models = [Region, State, Year, Resource, CommitmentTerm];
 
 const connection = new Sequelize(databaseConfig);
 
