@@ -1,0 +1,24 @@
+{
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "plugins": ["react", "jsx-a11y", "import"],
+    "extends": "airbnb",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "rules": {
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "react/react-in-jsx-scope": "off",
+        "global-require": "off",
+        "import/prefer-default-export": "off",
+        "import/no-extraneous-dependencies": "off"
+    }
+}
