@@ -16,7 +16,7 @@ export default class CommitmentTerm extends Model {
           },
         },
       },
-      entity: Sequelize.INTEGER,
+      entity: Sequelize.STRING,
       companyName: Sequelize.STRING,
       process: Sequelize.STRING,
       term: Sequelize.STRING,
@@ -34,7 +34,7 @@ export default class CommitmentTerm extends Model {
 
   static associate(models) {
     this.belongsTo(models.State, { foreignKey: 'state' });
-    this.belongsTo(models.Year, { foreignKey: 'years' });
-    this.belongsTo(models.Resource, { foreignKey: 'resources' });
+    this.belongsTo(models.Year, { foreignKey: 'year' });
+    this.belongsTo(models.Resource, { foreignKey: 'resource' });
   }
 }

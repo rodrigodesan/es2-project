@@ -12,10 +12,10 @@ module.exports = {
         allowNull: false,
       },
       entity: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.STRING,
         allowNull: false,
       },
-      companyName: {
+      company_name: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -31,11 +31,11 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
-      validityStart: {
+      validity_start: {
         type: Sequelize.DATE,
         allowNull: false,
       },
-      validityEnd: {
+      validity_end: {
         type: Sequelize.DATE,
         allowNull: false,
       },
@@ -63,11 +63,11 @@ module.exports = {
           key: 'id',
         },
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },

@@ -7,11 +7,6 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      itemCode: {
-        type: Sequelize.INTEGER,
-        allowNull: false,
-        unique: true,
-      },
       item: {
         type: Sequelize.STRING,
         allowNull: false,
@@ -28,11 +23,11 @@ module.exports = {
         type: Sequelize.FLOAT,
         allowNull: false,
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },

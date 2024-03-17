@@ -3,7 +3,10 @@ import Sequelize, { Model } from 'sequelize';
 export default class Region extends Model {
   static init(sequelize) {
     super.init({
-      acronym: Sequelize.STRING,
+      acronym: {
+        type: Sequelize.STRING,
+        unique: true,
+      },
       name: Sequelize.STRING,
     }, {
       sequelize,
