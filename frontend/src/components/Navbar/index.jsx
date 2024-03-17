@@ -24,9 +24,8 @@ function DashboardNavbar() {
                 <a className="nav-link fs-4" href="#d">Olá, Convidado</a>
               </li>
               <li className="nav-item px-1">
-                <button className="btn bt-navbar  rounded-5 px-3 fs-5 border border-dark" type="submit">Logout</button>
+                <button className="btn bt-navbar  rounded-5 px-3 fs-5 border border-dark d-none" type="submit">Logout</button>
               </li>
-
             </ul>
           </div>
         </div>
@@ -56,7 +55,7 @@ function HomeNavbar() {
                 <a className="nav-link fs-4" href="#d">Recursos</a>
               </li>
               <li className="nav-item px-1">
-                <button className="btn bt-navbar rounded-5 px-3 fs-5 border border-dark" type="submit">Entrar como convidado</button>
+                <button className="btn bt-navbar rounded-5 px-3 fs-5 border border-dark d-none" type="submit">Entrar como convidado</button>
               </li>
 
             </ul>
