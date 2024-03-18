@@ -1,7 +1,6 @@
 import './App.css';
+import { Router } from './Router';
 
 export function App() {
-  return (
-    <h1>Projeto Front ES2</h1>
-  );
+  return <Router />;
 }
