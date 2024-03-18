@@ -2,9 +2,17 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
+import './database';
+
 import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
+
+import regionRoutes from './routes/regionRoutes';
+import stateRoutes from './routes/stateRoutes';
+import yearRoutes from './routes/yearRoutes';
+import resourceRoutes from './routes/resourceRoutes';
+import commitmentTermRoutes from './routes/commitmentTermRoutes';
 
 const whiteList = (`${process.env.APP_WHITELIST}`).split(',');
 
@@ -23,6 +31,7 @@ class App {
   constructor() {
     this.app = express();
     this.middlewares();
+    this.routes();
   }
 
   middlewares() {
@@ -30,6 +39,14 @@ class App {
     this.app.use(helmet({ crossOriginResourcePolicy: false }));
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(express.json());
+  }
+
+  routes() {
+    this.app.use('/regions', regionRoutes);
+    this.app.use('/states', stateRoutes);
+    this.app.use('/years', yearRoutes);
+    this.app.use('/resources', resourceRoutes);
+    this.app.use('/commitment-terms', commitmentTermRoutes);
   }
 }
 
