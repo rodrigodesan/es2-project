@@ -91,8 +91,10 @@ class SetupDb {
       const states = await State.findAll();
 
       const years = await this.#setupYears(allData.value);
+      // const years = await Year.findAll();
 
       const resources = await this.#setupResources(allData.value);
+      // const resources = await Resource.findAll();
 
       const termsToCreate = [];
       allData.value.forEach((dataItem) => {
@@ -110,6 +112,8 @@ class SetupDb {
         });
 
         if (thisResource && thisState && thisYear) {
+          const [startDay, startMonth, startYear] = dataItem.inicio_vigencia.split("/");
+          const [endDay, endMonth, endYear] = dataItem.fim_vigencia.split("/");
           termsToCreate.push({
             cnpj: dataItem.cnpj,
             entity: dataItem.entidade,
@@ -117,8 +121,8 @@ class SetupDb {
             process: dataItem.processo,
             term: dataItem.termo,
             value: Number(dataItem.valor_termo),
-            validityStart: Date(dataItem.inicio_vigencia),
-            validityEnd: Date(dataItem.fim_vigencia),
+            validityStart: new Date(`${startYear}-${startMonth}-${startDay}`),
+            validityEnd: new Date(`${endYear}-${endMonth}-${endDay}`),
             state: thisState.id,
             year: thisYear.id,
             resource: thisResource.id,
