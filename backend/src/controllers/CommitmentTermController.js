@@ -84,7 +84,7 @@ class CommitmentTermController {
         stateId, resourceId,
       } = req.query;
 
-      const result = await CommitmentTerm.findAll({
+      const result = await CommitmentTerm.findOne({
         attributes: [
           [sequelize.fn('avg', sequelize.literal('validity_end - validity_start')), 'avg_duration'],
         ],
