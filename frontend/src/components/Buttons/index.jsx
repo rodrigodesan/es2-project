@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Button({
-  title, icon, action, color, // eslint-disable-line react/prop-types
+  title, icon, action, color,
 }) {
   const buttonClass = `btn ${color} rounded-5 mt-3 px-4 ms-4 `;
   return (
