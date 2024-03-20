@@ -23,7 +23,7 @@ export async function getCommitmentTerms() {
 }
 
 export async function getStatesByTerms({ maxStates, regionId, order }) {
-  const withoutParams = maxStates === 0 && regionId === 0 && order === '';
+  const withoutParams = maxStates === 0 && regionId === 0;
 
   return apiClient.get('/commitment-terms/states-by-terms', withoutParams ? undefined : {
     maxStates, regionId, order,
@@ -38,7 +38,6 @@ export async function getAverageVigency({ stateId, resourceId }) {
   });
 }
 
-// todas === 0
 export async function getStatesByVigency({ yearId, maxStates, regionId }) {
   const withoutParams = yearId === 0 && maxStates === 0 && regionId === 0;
 
