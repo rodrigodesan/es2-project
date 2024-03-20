@@ -17,7 +17,13 @@
             }
         ],
         "react/react-in-jsx-scope": "off",
+        "react/prop-types": "off",
+        "react/no-array-index-key": "off",
+        "react/destructuring-assignment": "off",
         "global-require": "off",
+        "implicit-arrow-linebreak": "off",
+        "no-constructor-return": "off",
+        "no-mixed-operators": "off",
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off"
     }

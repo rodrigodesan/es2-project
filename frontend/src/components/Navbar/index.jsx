@@ -66,7 +66,7 @@ function HomeNavbar() {
   );
 }
 
-function Navbar({ page }) { // eslint-disable-line react/prop-types
+function Navbar({ page }) {
   return page === 'true' ? <HomeNavbar /> : <DashboardNavbar />;
 }
 

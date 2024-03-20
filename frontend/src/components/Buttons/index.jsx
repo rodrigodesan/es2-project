@@ -1,12 +1,12 @@
 import React from 'react';
 
 function Button({
-  title, icon, action, color, // eslint-disable-line react/prop-types
+  title, icon, action, color, onClick,
 }) {
   const buttonClass = `btn ${color} rounded-5 mt-3 px-4 ms-4 `;
   return (
     <div>
-      <button type="submit" className={buttonClass}>
+      <button type="button" className={buttonClass} onClick={onClick}>
         <a className="text-decoration-none text-reset" href={action}>
           {title}
           {' '}
