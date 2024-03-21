@@ -3,7 +3,7 @@ import React from 'react';
 function DashboardNavbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbarColor">
+      <nav className="navbar navbar-expand-lg navbarColor fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand pt-0 pb-0 logo" href="/home"><img src="./src/assets/logo/logo.png" alt="s" /></a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -24,7 +24,7 @@ function DashboardNavbar() {
                 <a className="nav-link fs-4" href="#d">Olá, Convidado</a>
               </li>
               <li className="nav-item px-1">
-                <button className="btn bt-navbar  rounded-5 px-3 fs-5 border border-dark d-none" type="submit">Logout</button>
+                <button className="btn bt-navbar  rounded-5 px-3 fs-5 border border-dark" type="submit">Logout</button>
               </li>
             </ul>
           </div>
@@ -37,7 +37,7 @@ function DashboardNavbar() {
 function HomeNavbar() {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbarColor">
+      <nav className="navbar navbar-expand-lg navbarColor fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand pt-0 pb-0 logo" href="/home"><img src="./src/assets/logo/logo.png" alt="s" /></a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,7 +55,7 @@ function HomeNavbar() {
                 <a className="nav-link fs-4" href="#d">Recursos</a>
               </li>
               <li className="nav-item px-1">
-                <button className="btn bt-navbar rounded-5 px-3 fs-5 border border-dark d-none" type="submit">Entrar como convidado</button>
+                <button className="btn bt-navbar rounded-5 px-3 fs-5 border border-dark" type="submit">Entrar como convidado</button>
               </li>
 
             </ul>
