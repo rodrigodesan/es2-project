@@ -3,7 +3,7 @@ import Sequelize, { Model } from 'sequelize';
 export default class SavedSearch extends Model {
   static init(sequelize) {
     super.init({
-      userID: Sequelize.STRING,
+      user: Sequelize.STRING,
       termo: {
         type: Sequelize.STRING,
         allowNull: false
@@ -18,6 +18,6 @@ export default class SavedSearch extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.User, { foreignKey: 'userID' });
+    this.belongsTo(models.User, { foreignKey: 'user' });
   }
 }
