@@ -57,7 +57,8 @@ export default class User extends Model {
     return bcryptjs.compare(password, this.password_hash);
   }
 
-  /* static associate(models) {
-    this.hasMany(models.Login, { foreignKey: 'user', onDelete: 'cascade' });
-  } */
+  static associate(models) {
+    // this.hasMany(models.Login, { foreignKey: 'user', onDelete: 'cascade' });
+    this.hasMany(models.SavedSearch, { foreignKey: 'userID' });
+  }
 }
