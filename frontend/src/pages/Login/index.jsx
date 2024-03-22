@@ -44,11 +44,10 @@ function Login() {
             {showSignIn ? <SignIn /> : <SignUp />}
             <p className="text-center mt-4 signUp-font">
               {showSignIn ? 'Não possui uma conta?' : 'Já possui uma conta?'}
-              <span className="login-hl" onClick={toggleForm}>
+              <span role="presentation" className="login-hl" onClick={toggleForm}>
                 {showSignIn ? 'Inscreva-se' : 'Login'}
               </span>
             </p>
-
           </div>
 
         </div>
