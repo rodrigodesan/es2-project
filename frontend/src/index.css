@@ -112,3 +112,69 @@ body {
   background-color: var(--mainColor) !important;
   margin: 30px 0 0 0!important;
 }
+
+
+/* Team and About */
+.font1 {
+  font-family: var(--font1) !important;
+}
+
+.members {
+  margin: 50px 0 40px 0px !important;
+}
+
+.img-team {
+  width: 250px !important;
+  height: 250px !important;
+  margin-top: 5px !important;
+  margin-bottom: -3px !important;
+  border-top-left-radius: 28px !important;
+  border-top-right-radius: 28px !important;
+  border: 2px solid black !important;
+}
+
+.team-btn {
+  background-color: #fff;
+  border: none;
+  margin: 20px;
+}
+
+.github {
+  width: 32px;
+  height: 32px;
+  margin-top: 0px;
+  padding:2px;
+
+}
+
+.team-description {
+  font-size: 24px;
+  color: white;
+  text-align: center;
+  
+}
+
+.team-btn p {
+  background-color: var(--mainColor);
+  border-bottom-left-radius: 28px;
+  border-bottom-right-radius: 28px;
+  border: 2px solid black;
+  color: black;
+  font-family: var(--font1) !important;
+}
+
+
+
+.input-with-icon {
+  position: relative;
+  display: inline-block;
+}
+
+.eye-icon {
+  position: absolute;
+  top: 50%;
+  right: 30px;
+  width: 8%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
