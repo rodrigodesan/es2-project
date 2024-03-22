@@ -70,7 +70,7 @@ function Dashboard() {
 
   return (
     <div>
-      <Navbar page="false" />
+      <Navbar page="false" activePage="dashboard" />
       <Box boxId="box-category" title="Categoria de Busca" options={categoriesFilters.options} />
       <div className="row mx-0">
         <div className="col-md-4 p-0">
