@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../Buttons';
 
 function SignIn() {
+  const [senhaVisivel, setSenhaVisivel] = useState(false);
+
+  const alternarVisibilidadeSenha = () => {
+    setSenhaVisivel(!senhaVisivel);
+  };
   return (
     <div>
       <img className="logo" src="./src/assets/logo/logo.png" alt="" />
@@ -11,7 +16,10 @@ function SignIn() {
       </div>
       <div className="mt-5">
         <span className="m-2 signUp-font" id="basic-addon2">Senha:</span>
-        <input type="text" className="text-center selection-bg rounded-4 border border-dark py-1 me-4" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+        <div className="input-with-icon">
+          <input type={senhaVisivel ? 'text' : 'password'} className="text-center selection-bg rounded-4 border border-dark py-1 me-4" placeholder="********" aria-label="Recipient's username" aria-describedby="basic-addon2" />
+          <img className="eye-icon" role="presentation" src={senhaVisivel ? './src/assets/icons/eye-solid.svg' : './src/assets/icons/eye-slash-solid.svg'} alt="Mostrar senha" onClick={alternarVisibilidadeSenha} />
+        </div>
       </div>
       <p className="mt-3 login-hl signUp-font">Esqueceu a senha?</p>
       <label htmlFor="checkboxForm">
