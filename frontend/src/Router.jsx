@@ -1,12 +1,16 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Team from './pages/Team';
 import { DashProvider } from './contexts/dashContext';
 
 export function Router() {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/team" element={<Team />} />
         <Route path="/home" element={<DashProvider><Dashboard /></DashProvider>} />
       </Routes>
     </BrowserRouter>
