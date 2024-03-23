@@ -24,8 +24,10 @@
         "implicit-arrow-linebreak": "off",
         "no-constructor-return": "off",
         "no-mixed-operators": "off",
+        "guard-for-in": "off",
         "max-classes-per-file": "off",
         "class-methods-use-this": "off",
+        "no-restricted-syntax": "off",
         "import/prefer-default-export": "off",
         "import/no-extraneous-dependencies": "off"
     }
