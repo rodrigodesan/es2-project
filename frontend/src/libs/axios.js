@@ -34,7 +34,33 @@ export class ApiClient {
       const response = await this.axiosInstance.post(url, data);
       return response.data;
     } catch (error) {
-      throw new Error('Erro ao fazer requisição POST:', error);
+      return error.response.data;
+    }
+  }
+
+  async put(url, data, token) {
+    try {
+      const response = await this.axiosInstance.put(url, data, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return error.response.data;
+    }
+  }
+
+  async delete(url, token) {
+    try {
+      const response = await this.axiosInstance.delete(url, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+      return response.data;
+    } catch (error) {
+      return error.response.data;
     }
   }
 }
