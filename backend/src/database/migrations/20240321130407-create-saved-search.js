@@ -15,19 +15,19 @@ module.exports = {
           key: 'id'
         }
       },
-      termo: {
+      term: {
         allowNull: false,
         type: Sequelize.STRING
       },
-      filtro1: {
+      filter1: {
         allowNull: true,
         type: Sequelize.STRING,
       },
-      filtro2: {
+      filter2: {
         allowNull: true,
         type: Sequelize.STRING,
       },
-      filtro3: {
+      filter3: {
         allowNull: true,
         type: Sequelize.STRING,
       },

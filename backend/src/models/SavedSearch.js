@@ -4,13 +4,13 @@ export default class SavedSearch extends Model {
   static init(sequelize) {
     super.init({
       user: Sequelize.STRING,
-      termo: {
+      term: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      filtro1: Sequelize.STRING,
-      filtro2: Sequelize.STRING,
-      filtro3: Sequelize.STRING,
+      filter1: Sequelize.STRING,
+      filter2: Sequelize.STRING,
+      filter3: Sequelize.STRING,
     }, {
       sequelize
     });

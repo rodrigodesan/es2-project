@@ -1,7 +1,7 @@
 import SavedSearch from "../models/SavedSearch"
 
 class SavedSearchController {
-  async save(req, res) {
+  async store(req, res) {
     try {
       const userId = req.userId;
 
@@ -9,8 +9,8 @@ class SavedSearchController {
 
       const newSavedSearch = await SavedSearch.create(req.body);
 
-      const { user, termo, filtro1, filtro2, filtro3 } = newSavedSearch;
-      return res.json({ user, termo, filtro1, filtro2, filtro3 });
+      const { user, term, filter1, filter2, filter3 } = newSavedSearch;
+      return res.json({ user, term, filter1, filter2, filter3 });
 
     } catch (e) {
       console.log(e);
@@ -20,7 +20,7 @@ class SavedSearchController {
     }
   }
 
-  async list(req, res) {
+  async index(req, res) {
     try {
       const userId = req.userId;
 
