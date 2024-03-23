@@ -18,6 +18,10 @@ export class ApiClient {
     ApiClient.instance = this;
   }
 
+  setAuthorization(token) {
+    this.axiosInstance.defaults.headers.Authorization = `Bearer ${token}`;
+  }
+
   async get(url, queryParams = {}) {
     try {
       const response = await this.axiosInstance.get(url, {
@@ -38,26 +42,18 @@ export class ApiClient {
     }
   }
 
-  async put(url, data, token) {
+  async put(url, data) {
     try {
-      const response = await this.axiosInstance.put(url, data, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await this.axiosInstance.put(url, data);
       return response.data;
     } catch (error) {
       return error.response.data;
     }
   }
 
-  async delete(url, token) {
+  async delete(url) {
     try {
-      const response = await this.axiosInstance.delete(url, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const response = await this.axiosInstance.delete(url);
       return response.data;
     } catch (error) {
       return error.response.data;
