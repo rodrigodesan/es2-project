@@ -2,14 +2,19 @@ import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import SignIn from '../../components/SignIn';
 import SignUp from '../../components/SignUp';
+import { useAuthContext } from '../../contexts/authContext';
 
 function Login() {
   const [showSignIn, setShowSignIn] = useState(true);
   const [textPosition, setTextPosition] = useState(true);
 
+  const { setSuccess, setErrors } = useAuthContext();
+
   const toggleForm = () => {
     setShowSignIn(!showSignIn);
     setTextPosition(!textPosition);
+    setSuccess('');
+    setErrors([]);
   };
 
   return (
