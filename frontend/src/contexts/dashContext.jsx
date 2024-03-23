@@ -46,13 +46,13 @@ function DashProvider({ children }) {
   });
 
   const fetchData = useCallback(async (params) => {
-    const category = params.category.value;
+    const category = params.category?.value;
 
     switch (category) {
       case 1: {
-        const maxStates = params.filter1.value;
-        const regionId = params.filter2.value;
-        const order = params.filter3.value;
+        const maxStates = params.filter1?.value;
+        const regionId = params.filter2?.value;
+        const order = params.filter3?.value;
 
         setLoading(true);
         const response = await getStatesByTerms({ maxStates, regionId, order });
@@ -62,8 +62,8 @@ function DashProvider({ children }) {
       }
 
       case 2: {
-        const stateId = params.filter1.value;
-        const resourceId = params.filter2.value;
+        const stateId = params.filter1?.value;
+        const resourceId = params.filter2?.value;
 
         setLoading(true);
         const response = await getAverageVigency({ stateId, resourceId });
@@ -73,9 +73,9 @@ function DashProvider({ children }) {
       }
 
       case 3: {
-        const yearId = params.filter1.value;
-        const maxStates = params.filter2.value;
-        const regionId = params.filter3.value;
+        const yearId = params.filter1?.value;
+        const maxStates = params.filter2?.value;
+        const regionId = params.filter3?.value;
 
         setLoading(true);
         const response = await getStatesByVigency({ yearId, maxStates, regionId });
@@ -85,9 +85,9 @@ function DashProvider({ children }) {
       }
 
       case 4: {
-        const yearId = params.filter1.value;
-        const stateId = params.filter2.value;
-        const regionId = params.filter3.value;
+        const yearId = params.filter1?.value;
+        const stateId = params.filter2?.value;
+        const regionId = params.filter3?.value;
 
         setLoading(true);
         const response = await getResourcesByTerm({ yearId, stateId, regionId });
@@ -97,9 +97,9 @@ function DashProvider({ children }) {
       }
 
       case 5: {
-        const yearId = params.filter1.value;
-        const maxStates = params.filter2.value;
-        const regionId = params.filter3.value;
+        const yearId = params.filter1?.value;
+        const maxStates = params.filter2?.value;
+        const regionId = params.filter3?.value;
 
         setLoading(true);
         const response = await getStatesByValue({ yearId, maxStates, regionId });

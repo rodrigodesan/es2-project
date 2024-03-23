@@ -14,6 +14,7 @@ function Box({
         case 'category': {
           setFilterResult([]);
           return {
+            ...previous,
             category: {
               value: Number(event.target.value),
             },
