@@ -30,7 +30,16 @@ export function Router() {
           <Route path="/team" element={<Team />} />
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/recursos" element={<Recursos />} />
-          <Route path="/home" element={<DashProvider><Dashboard /></DashProvider>} />
+          <Route
+            path="/home"
+            element={(
+              <DashProvider>
+                <ProfileProvider>
+                  <Dashboard />
+                </ProfileProvider>
+              </DashProvider>
+            )}
+          />
           <Route path="/perfil" element={<PrivateRoute><Perfil /></PrivateRoute>} />
           <Route path="/buscas-salvas" element={<PrivateRoute><BuscasSalvas /></PrivateRoute>} />
         </Routes>
