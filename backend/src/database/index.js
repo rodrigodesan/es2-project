@@ -7,8 +7,9 @@ import Year from '../models/Year';
 import Resource from '../models/Resource';
 import CommitmentTerm from '../models/CommitmentTerm';
 import User from '../models/User';
+import SavedSearch from '../models/SavedSearch';
 
-const models = [Region, State, Year, Resource, CommitmentTerm, User];
+const models = [Region, State, Year, Resource, CommitmentTerm, User, SavedSearch];
 
 const connection = new Sequelize(databaseConfig);
 
