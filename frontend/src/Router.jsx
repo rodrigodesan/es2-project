@@ -1,4 +1,6 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter, Routes, Route, Navigate,
+} from 'react-router-dom';
 
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
@@ -8,7 +10,16 @@ import Recursos from './pages/Recursos';
 import Perfil from './pages/Perfil';
 import BuscasSalvas from './pages/BuscasSalvas';
 import { DashProvider } from './contexts/dashContext';
-import { AuthProvider } from './contexts/authContext';
+import { AuthProvider, useAuthContext } from './contexts/authContext';
+import { ProfileProvider } from './contexts/profileContext';
+
+function PrivateRoute({ children }) {
+  const { authenticated } = useAuthContext();
+
+  if (!authenticated) return <Navigate to="/" />;
+
+  return <ProfileProvider>{children}</ProfileProvider>;
+}
 
 export function Router() {
   return (
@@ -20,8 +31,8 @@ export function Router() {
           <Route path="/sobre" element={<Sobre />} />
           <Route path="/recursos" element={<Recursos />} />
           <Route path="/home" element={<DashProvider><Dashboard /></DashProvider>} />
-          <Route path="/perfil" element={<Perfil />} />
-          <Route path="/buscas-salvas" element={<BuscasSalvas />} />
+          <Route path="/perfil" element={<PrivateRoute><Perfil /></PrivateRoute>} />
+          <Route path="/buscas-salvas" element={<PrivateRoute><BuscasSalvas /></PrivateRoute>} />
         </Routes>
       </AuthProvider>
     </BrowserRouter>
