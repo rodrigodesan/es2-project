@@ -1,10 +1,12 @@
 import React from 'react';
 import { useDashContext } from '../../contexts/dashContext';
+import { useProfileContext } from '../../contexts/profileContext';
 
 function Box({
   boxId, title, options, disabled,
 }) {
   const { setCurrentBoxValue, setFilterResult } = useDashContext();
+  const { setSuccess } = useProfileContext();
 
   function onChange(event) {
     const multipleBoxId = boxId.split('-');
@@ -13,6 +15,7 @@ function Box({
       switch (multipleBoxId[1]) {
         case 'category': {
           setFilterResult([]);
+          setSuccess('');
           return {
             ...previous,
             category: {

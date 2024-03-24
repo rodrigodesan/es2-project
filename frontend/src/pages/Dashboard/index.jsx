@@ -6,6 +6,7 @@ import Result from '../../components/Result';
 import { useDashContext } from '../../contexts/dashContext';
 import { createOptions } from './utils';
 import { categoriesFilters } from './helpers';
+import { useProfileContext } from '../../contexts/profileContext';
 
 function Dashboard() {
   const {
@@ -19,6 +20,7 @@ function Dashboard() {
     filterResult,
     loading,
   } = useDashContext();
+  const { saveASearch, success } = useProfileContext();
 
   const currentBoxFilter = (boxNumber) =>
     categoriesFilters.filters[currentBoxValue.category.value]?.[boxNumber];
@@ -66,7 +68,17 @@ function Dashboard() {
     fetchData(currentBoxValue);
   };
 
+  const onSaveSearch = () => {
+    const term = categoriesFilters.options[currentBoxValue.category.value - 1].label;
+    const filter1 = `${currentBoxValue.filter1.id}-${currentBoxValue.filter1.value}`;
+    const filter2 = `${currentBoxValue.filter2.id}-${currentBoxValue.filter2.value}`;
+    const filter3 = `${currentBoxValue.filter3.id}-${currentBoxValue.filter3.value}`;
+
+    saveASearch(term, filter1 !== '-' && filter1 || '', filter2 !== '-' && filter2 || '', filter3 !== '-' && filter3 || '');
+  };
+
   const filterDisabled = currentBoxValue.category.value !== 0 && !currentBoxFilter(2);
+  const buttonSearchDisabled = currentBoxValue.category.value === 0;
 
   return (
     <div>
@@ -82,8 +94,9 @@ function Dashboard() {
         </div>
         <div className="col-md-4 p-0">
           <Box boxId={`${currentBoxFilter(1)?.id}-filter2`} title={currentBoxFilter(1)?.title || 'Filtro 2'} options={currentBoxFilter(1)?.options || dynamicOptions(currentBoxFilter(1)?.id)} />
-          <div className="d-flex justify-content-center">
-            <Button title="Salvar Busca" icon="/src/assets/icons/save-icon.png" color="bg-save btn-md border border-dark flex-1 px-5" action="home" />
+          <div className="d-flex justify-content-center align-items-center flex-column">
+            <Button title="Salvar Busca" icon="/src/assets/icons/save-icon.png" color="bg-save btn-md border border-dark flex-1 px-5" onClick={onSaveSearch} isDisabled={buttonSearchDisabled} />
+            {success && <p className="text-success mt-3">{success}</p>}
           </div>
         </div>
         <div className="col-md-4 p-0">
