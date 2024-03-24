@@ -39,7 +39,7 @@ function SignIn() {
         </div>
       </div>
       <p className="mt-3 login-hl signUp-font">Esqueceu a senha?</p>
-      <label htmlFor="checkboxForm">
+      <label className="mx-5" htmlFor="checkboxForm">
         {' '}
         <input type="checkbox" id="checkboxForm" className="mx-2 SignUp-font" />
         Concordo com os
