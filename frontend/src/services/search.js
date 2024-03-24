@@ -23,15 +23,15 @@ export async function getCommitmentTerms() {
 }
 
 export async function getStatesByTerms({ maxStates, regionId, order }) {
-  const withoutParams = maxStates === 0 && regionId === 0;
+  const withoutParams = maxStates === '0' && regionId === '0';
 
-  return apiClient.get('/commitment-terms/states-by-terms', withoutParams ? undefined : {
+  return apiClient.get('/commitment-terms/states-by-terms', withoutParams ? { order } : {
     maxStates, regionId, order,
   });
 }
 
 export async function getAverageVigency({ stateId, resourceId }) {
-  const withoutParams = stateId === 0 && resourceId === 0;
+  const withoutParams = stateId === '0' && resourceId === '0';
 
   return apiClient.get('/commitment-terms/average-vigency', withoutParams ? undefined : {
     stateId, resourceId,
@@ -39,7 +39,7 @@ export async function getAverageVigency({ stateId, resourceId }) {
 }
 
 export async function getStatesByVigency({ yearId, maxStates, regionId }) {
-  const withoutParams = yearId === 0 && maxStates === 0 && regionId === 0;
+  const withoutParams = yearId === '0' && maxStates === '0' && regionId === '0';
 
   return apiClient.get('/commitment-terms/states-by-vigency', withoutParams ? undefined : {
     yearId,
@@ -49,7 +49,7 @@ export async function getStatesByVigency({ yearId, maxStates, regionId }) {
 }
 
 export async function getResourcesByTerm({ yearId, stateId, regionId }) {
-  const withoutParams = yearId === 0 && stateId === 0 && regionId === 0;
+  const withoutParams = yearId === '0' && stateId === '0' && regionId === '0';
 
   return apiClient.get('/commitment-terms/resources-by-term', withoutParams ? undefined : {
     yearId, stateId, regionId,
@@ -57,7 +57,7 @@ export async function getResourcesByTerm({ yearId, stateId, regionId }) {
 }
 
 export async function getStatesByValue({ yearId, maxStates, regionId }) {
-  const withoutParams = yearId === 0 && maxStates === 0 && regionId === 0;
+  const withoutParams = yearId === '0' && maxStates === '0' && regionId === '0';
 
   return apiClient.get('/commitment-terms/states-by-value', withoutParams ? undefined : {
     yearId, maxStates, regionId,
