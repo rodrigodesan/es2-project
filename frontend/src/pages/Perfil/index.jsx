@@ -64,9 +64,9 @@ function Perfil() {
             )}
             <div className="border border-2 border-black rounded-5 m-5">
               <h3 className="font2 mt-5 ms-1 ps-4 fs-4 fw-bolder">Buscas Salvas 📌</h3>
-              {searches.map((x, index) => (
+              {searches.length ? searches.map((x, index) => (
                 <SaveSearches key={index} data={x} />
-              ))}
+              )) : <p className="ps-4">Nenhuma busca salva, salve algumas e veja-as aqui</p>}
             </div>
           </div>
         </div>

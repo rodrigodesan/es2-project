@@ -5,7 +5,6 @@ import Box from '../../components/Box';
 import Button from '../../components/Buttons';
 import Result from '../../components/Result';
 import { useDashContext } from '../../contexts/dashContext';
-import { createOptions } from './utils';
 import { categoriesFilters } from './helpers';
 import { useProfileContext } from '../../contexts/profileContext';
 
@@ -29,16 +28,16 @@ function Dashboard() {
   const dynamicOptions = (id) => {
     switch (id) {
       case 'regionId':
-        return createOptions(regions);
+        return regions;
 
       case 'stateId':
-        return createOptions(states);
+        return states;
 
       case 'resourceId':
-        return createOptions(resources);
+        return resources;
 
       case 'yearId':
-        return createOptions(years);
+        return years;
 
       default:
         return [];
