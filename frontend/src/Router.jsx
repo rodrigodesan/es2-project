@@ -12,6 +12,7 @@ import BuscasSalvas from './pages/BuscasSalvas';
 import { DashProvider } from './contexts/dashContext';
 import { AuthProvider, useAuthContext } from './contexts/authContext';
 import { ProfileProvider } from './contexts/profileContext';
+import { ReportProvider } from './contexts/reportContext';
 
 function PrivateRoute({ children }) {
   const { authenticated } = useAuthContext();
@@ -25,24 +26,38 @@ export function Router() {
   return (
     <BrowserRouter>
       <AuthProvider>
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/sobre" element={<Sobre />} />
-          <Route path="/recursos" element={<Recursos />} />
-          <Route
-            path="/home"
-            element={(
-              <DashProvider>
-                <ProfileProvider>
-                  <Dashboard />
-                </ProfileProvider>
-              </DashProvider>
-            )}
-          />
-          <Route path="/perfil" element={<PrivateRoute><Perfil /></PrivateRoute>} />
-          <Route path="/buscas-salvas" element={<PrivateRoute><BuscasSalvas /></PrivateRoute>} />
-        </Routes>
+        <ProfileProvider>
+          <DashProvider>
+            <ReportProvider>
+              <Routes>
+                <Route path="/" element={<Login />} />
+                <Route path="/team" element={<Team />} />
+                <Route path="/sobre" element={<Sobre />} />
+                <Route path="/recursos" element={<Recursos />} />
+                <Route
+                  path="/home"
+                  element={<Dashboard />}
+                />
+                <Route
+                  path="/perfil"
+                  element={(
+                    <PrivateRoute>
+                      <Perfil />
+                    </PrivateRoute>
+                  )}
+                />
+                <Route
+                  path="/buscas-salvas"
+                  element={(
+                    <PrivateRoute>
+                      <BuscasSalvas />
+                    </PrivateRoute>
+                  )}
+                />
+              </Routes>
+            </ReportProvider>
+          </DashProvider>
+        </ProfileProvider>
       </AuthProvider>
     </BrowserRouter>
   );

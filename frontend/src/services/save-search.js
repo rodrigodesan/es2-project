@@ -11,7 +11,7 @@ export async function saveSearch({
 }
 
 export async function getSavedSearches() {
-  return apiClient.get('saved-searches');
+  return apiClient.get('/saved-searches');
 }
 
 export async function getSavedSearch(id) {
