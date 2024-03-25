@@ -1,16 +1,22 @@
 import Sequelize, { Model } from 'sequelize';
 
-export default class SavedSearch extends Model {
+export default class Report extends Model {
   static init(sequelize) {
     super.init({
       user: Sequelize.STRING,
-      term: {
+      savedSearch: Sequelize.STRING,
+      title: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      filter1: Sequelize.STRING,
-      filter2: Sequelize.STRING,
-      filter3: Sequelize.STRING,
+      description: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      term: {
+        type: Sequelize.STRING,
+        allowNull: false
+      }
     }, {
       sequelize
     });
@@ -19,6 +25,6 @@ export default class SavedSearch extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user' });
-    this.hasMany(models.Report, { foreignKey: 'savedSearch' });
+    this.belongsTo(models.SavedSearch, { foreignKey: 'savedSearch' });
   }
 }
