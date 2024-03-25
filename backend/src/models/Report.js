@@ -3,8 +3,8 @@ import Sequelize, { Model } from 'sequelize';
 export default class Report extends Model {
   static init(sequelize) {
     super.init({
-      user: Sequelize.STRING,
-      savedSearch: Sequelize.STRING,
+      user: Sequelize.INTEGER,
+      savedSearch: Sequelize.INTEGER,
       title: {
         type: Sequelize.STRING,
         allowNull: false

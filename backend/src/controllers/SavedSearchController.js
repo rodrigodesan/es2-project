@@ -44,11 +44,7 @@ class SavedSearchController {
     try {
       const id = req.params.id;
 
-      console.log(id);
-
       const savedSearch = await SavedSearch.findByPk(id);
-
-      console.log(savedSearch);
 
       if (!savedSearch) {
         return res.status(400).json({
