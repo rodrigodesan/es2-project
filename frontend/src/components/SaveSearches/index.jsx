@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
-function SaveSearchs({
-  title,
+function SaveSearches({
+  data,
 }) {
   const [hearth, setHearth] = useState(false);
   const [bgSearches, setBgSearches] = useState('');
@@ -22,7 +22,8 @@ function SaveSearchs({
     setBgSearches(cor);
   }, []);
 
-  const date = new Date().toLocaleDateString('en-GB', {
+  const createdAt = new Date(data.created_at);
+  const date = createdAt.toLocaleDateString('pt-BR', {
     year: '2-digit',
     month: '2-digit',
     day: '2-digit',
@@ -31,7 +32,7 @@ function SaveSearchs({
   return (
     <div>
       <div className={`d-flex align-items-center ${bgSearches} border border-black rounded-4 p-4 m-4 fs-6 font2 text-white fw-semibold`}>
-        <span className="flex-grow-1 me-5 pe-5">{title}</span>
+        <span className="flex-grow-1 me-5 pe-5">{data.term}</span>
         <img className="me-3" src={writeIcon} alt="" />
         <span className="me-3 text-decoration-underline font1">Escrever relatório</span>
         <span className="me-3 font1">{date}</span>
@@ -44,4 +45,4 @@ function SaveSearchs({
   );
 }
 
-export default SaveSearchs;
+export default SaveSearches;
