@@ -23,7 +23,7 @@ class ReportController {
   async index(req, res) {
     try {
       const userId = req.userId;
-      const savedSearchId = req.body;
+      const savedSearchId = req.params.search;
 
       const reports = await Report.findAll({
         where: {
