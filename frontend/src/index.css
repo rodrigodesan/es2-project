@@ -176,12 +176,20 @@ body {
 .eye-icon {
   position: absolute;
   top: 50%;
-  right: 30px;
+  right: 52px;
   width: 8%;
   transform: translateY(-50%);
   cursor: pointer;
 }
 
+.eye-icon2 {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 6%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
 /* Profile UI */
 
 .settings {
@@ -222,4 +230,9 @@ body {
   background-color: #8A5F0C !important;
 }
 
+/* write report */
 
+.write-report {
+  padding: 20px !important;
+  margin-top: -26px !important;
+}
