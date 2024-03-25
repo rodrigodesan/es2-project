@@ -60,5 +60,6 @@ export default class User extends Model {
   static associate(models) {
     // this.hasMany(models.Login, { foreignKey: 'user', onDelete: 'cascade' });
     this.hasMany(models.SavedSearch, { foreignKey: 'user' });
+    this.hasMany(models.Report, { foreignKey: 'user' });
   }
 }

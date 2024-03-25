@@ -19,5 +19,6 @@ export default class SavedSearch extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user' });
+    this.hasMany(models.Report, { foreignKey: 'saved_search' });
   }
 }
