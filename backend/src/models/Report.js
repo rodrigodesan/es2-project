@@ -4,7 +4,7 @@ export default class Report extends Model {
   static init(sequelize) {
     super.init({
       user: Sequelize.INTEGER,
-      savedSearch: Sequelize.INTEGER,
+      saved_search: Sequelize.INTEGER,
       title: {
         type: Sequelize.STRING,
         allowNull: false
@@ -25,6 +25,6 @@ export default class Report extends Model {
 
   static associate(models) {
     this.belongsTo(models.User, { foreignKey: 'user' });
-    this.belongsTo(models.SavedSearch, { foreignKey: 'savedSearch' });
+    this.belongsTo(models.SavedSearch, { foreignKey: 'saved_search' });
   }
 }

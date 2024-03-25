@@ -15,7 +15,7 @@ module.exports = {
           key: 'id'
         }
       },
-      savedSearch: {
+      saved_search: {
         allowNull: false,
         type: Sequelize.INTEGER,
         references: {
@@ -35,6 +35,14 @@ module.exports = {
         allowNull: false,
         type: Sequelize.STRING
       },
+      created_at: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
+      updated_at: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      }
     });
   },
 

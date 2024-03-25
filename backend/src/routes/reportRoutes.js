@@ -4,7 +4,7 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = new Router();
 
-router.get('/:search', loginRequired, reportController.index);
+router.get('/search/:search', loginRequired, reportController.index);
 
 router.get('/:id', loginRequired, reportController.show);
 
