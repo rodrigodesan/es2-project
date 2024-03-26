@@ -36,18 +36,6 @@ function AuthProvider({ children }) {
     setLoading(false);
   }, [recoveredUser]);
 
-  // COMMENT: para rodar funções de teste
-  useEffect(() => {
-    (async () => {
-      // const users = await getUsers();
-      // console.log(users);
-
-      // const response = await signIn({ email: 'leticia@teste.com', password: '123456' });
-      // console.log(response);
-      // if (response.errors) console.log(response.errors);
-    })();
-  }, []);
-
   const login = useCallback(
     async (email, password) => {
       const response = await signIn({ email, password });

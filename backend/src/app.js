@@ -15,6 +15,8 @@ import resourceRoutes from './routes/resourceRoutes';
 import commitmentTermRoutes from './routes/commitmentTermRoutes';
 import userRoutes from './routes/userRoutes';
 import loginRoutes from './routes/loginRoutes';
+import savedSearchRoutes from './routes/savedSearchRoutes';
+import reportRoutes from './routes/reportRoutes';
 
 const whiteList = (`${process.env.APP_WHITELIST}`).split(',');
 
@@ -51,6 +53,8 @@ class App {
     this.app.use('/commitment-terms', commitmentTermRoutes);
     this.app.use('/users', userRoutes);
     this.app.use('/login', loginRoutes);
+    this.app.use('/saved-searches', savedSearchRoutes);
+    this.app.use('/reports', reportRoutes);
   }
 }
 

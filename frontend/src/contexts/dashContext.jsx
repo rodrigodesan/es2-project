@@ -17,6 +17,7 @@ import {
   getResourcesByTerm,
   getStatesByValue,
 } from '../services/search';
+import { createOptions } from '../pages/Dashboard/utils';
 
 const DashContext = createContext(null);
 
@@ -116,16 +117,16 @@ function DashProvider({ children }) {
   useEffect(() => {
     (async () => {
       const regionsResponse = await getRegions();
-      setRegions(regionsResponse);
+      setRegions(createOptions(regionsResponse));
 
       const statesResponse = await getStates();
-      setStates(statesResponse);
+      setStates(createOptions(statesResponse));
 
       const yearsResponse = await getYears();
-      setYears(yearsResponse);
+      setYears(createOptions(yearsResponse));
 
       const resourcesResponse = await getResources();
-      setResources(resourcesResponse);
+      setResources(createOptions(resourcesResponse));
     })();
   }, []);
 

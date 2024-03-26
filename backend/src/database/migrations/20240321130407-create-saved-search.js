@@ -1,35 +1,35 @@
 module.exports = {
-  async up(queryInterface, Sequelize) {
-    await queryInterface.createTable('users', {
+  async up (queryInterface, Sequelize) {
+    await queryInterface.createTable('saved_searches', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER,
       },
-      name: {
-        type: Sequelize.STRING,
+      user: {
         allowNull: false,
+        type: Sequelize.INTEGER,
+        references: {
+          model: 'users',
+          key: 'id'
+        }
       },
-      email: {
-        type: Sequelize.STRING,
+      term: {
         allowNull: false,
+        type: Sequelize.STRING
       },
-      phone: {
+      filter1: {
+        allowNull: true,
         type: Sequelize.STRING,
-        allowNull: false
       },
-      profession: {
+      filter2: {
+        allowNull: true,
         type: Sequelize.STRING,
-        allowNull: false
       },
-      site: {
+      filter3: {
+        allowNull: true,
         type: Sequelize.STRING,
-        allowNull: false
-      },
-      password_hash: {
-        type: Sequelize.STRING,
-        allowNull: false,
       },
       created_at: {
         allowNull: false,
@@ -38,10 +38,11 @@ module.exports = {
       updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
-      },
+      }
     });
   },
-  async down(queryInterface) {
-    await queryInterface.dropTable('users');
-  },
+
+  async down (queryInterface) {
+    await queryInterface.dropTable('saved_searches');
+  }
 };

@@ -5,12 +5,11 @@ import Button from '../Buttons';
 
 function DashboardNavbar({ activePage }) {
   const { logout, user } = useAuthContext();
-
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbarColor fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand pt-0 pb-0 logo" href="/"><img src="./src/assets/logo/logo.png" alt="s" /></a>
+          <Link to="/home" className="navbar-brand pt-0 pb-0 logo" href="/"><img src="./src/assets/logo/logo.png" alt="s" /></Link>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon" />
           </button>
@@ -19,12 +18,17 @@ function DashboardNavbar({ activePage }) {
               <li className="navbar-item px-3 ">
                 <Link className={`nav-link fs-4 ${activePage === 'dashboard' ? 'active fw-bold' : ''}`} aria-current="page" to="/home">Dashboard</Link>
               </li>
-              <li className="nav-item px-3">
-                <Link className={`nav-link fs-4 ${activePage === 'perfil' ? 'active fw-bold' : ''}`} to="/perfil">Perfil</Link>
-              </li>
-              <li className="nav-item px-3">
-                <Link className={`nav-link fs-4 ${activePage === 'buscas-salvas' ? 'active fw-bold' : ''}`} to="/buscas-salvas">Busca Salvas</Link>
-              </li>
+              {user ? (
+                <>
+                  <li className="nav-item px-3">
+
+                    <Link className={`nav-link fs-4 ${activePage === 'perfil' ? 'active fw-bold' : ''}`} to="/perfil">Perfil</Link>
+                  </li>
+                  <li className="nav-item px-3">
+                    <Link className={`nav-link fs-4 ${activePage === 'buscas-salvas' ? 'active fw-bold' : ''}`} to="/buscas-salvas">Busca Salvas</Link>
+                  </li>
+                </>
+              ) : null }
               {user ? (
                 <>
                   <li className="nav-item px-2">

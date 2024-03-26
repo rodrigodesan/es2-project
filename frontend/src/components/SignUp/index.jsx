@@ -48,7 +48,7 @@ function SignUp() {
           <p className="text-left m-2 signUp-font">Senha:</p>
           <div className="input-with-icon w-100">
             <input type={senhaVisivel ? 'text' : 'password'} className="text-center  w-100 border border-dark py-2 px-5 me-0  ms-0" placeholder="" aria-label="Login" aria-describedby="basic-addon1" value={password} onChange={(e) => setPassword(e.target.value)} />
-            <img className="eye-icon" role="presentation" src={senhaVisivel ? './src/assets/icons/eye-solid.svg' : './src/assets/icons/eye-slash-solid.svg'} alt="Mostrar senha" onClick={alternarVisibilidadeSenha} />
+            <img className="eye-icon2" role="presentation" src={senhaVisivel ? './src/assets/icons/eye-solid.svg' : './src/assets/icons/eye-slash-solid.svg'} alt="Mostrar senha" onClick={alternarVisibilidadeSenha} />
           </div>
           <Button title="Inscrever-se" color="signUp-button w-100 border border-dark fs-3 signUp-font" onClick={handleSubmit} />
         </div>

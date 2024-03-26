@@ -30,7 +30,7 @@ body {
 }
 .navbarColor {
   background-color: var(--mainColor);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   font-family: var(--font1);
 }
 
@@ -118,6 +118,9 @@ body {
 .font1 {
   font-family: var(--font1) !important;
 }
+.font2 {
+  font-family: var(--font2) !important;
+}
 
 .members {
   margin: 50px 0 40px 0px !important;
@@ -173,8 +176,63 @@ body {
 .eye-icon {
   position: absolute;
   top: 50%;
-  right: 30px;
+  right: 52px;
   width: 8%;
   transform: translateY(-50%);
   cursor: pointer;
+}
+
+.eye-icon2 {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  width: 6%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+/* Profile UI */
+
+.settings {
+  text-align: right !important;
+}
+
+.bg-profile {
+  background-color: rgba(255, 214, 0, 0.46);
+}
+.profile-img {
+  margin: -40px;
+  padding: 10px;
+}
+.infos-profile{
+  text-align: left !important;
+  
+}
+
+.edit-photo {
+  padding: 80px;
+}
+
+/* Search Saves */
+
+.bg1 {
+  background-color: #274143 !important;
+}
+.bg2 {
+  background-color: #BB3F18 !important;
+}
+.bg3 {
+  background-color: #261739 !important;
+}
+.bg4 {
+  background-color: #2C6B86 !important;
+}
+.bg5 {
+  background-color: #8A5F0C !important;
+}
+
+/* write report */
+
+.write-report {
+  padding: 20px !important;
+  margin-top: -26px !important;
 }

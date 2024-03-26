@@ -14,10 +14,10 @@ export async function getUser(id) {
   return apiClient.get(`/users/${id}`);
 }
 
-export async function updateUser(id, { name, email, password }, token) {
-  return apiClient.put(`/users/${id}`, { name, email, password }, token);
+export async function updateUser(id, { name, email, password }) {
+  return apiClient.put(`/users/${id}`, { name, email, password });
 }
 
-export async function deleteUser(id, token) {
-  return apiClient.delete(`/users/${id}`, token);
+export async function deleteUser(id) {
+  return apiClient.delete(`/users/${id}`);
 }
